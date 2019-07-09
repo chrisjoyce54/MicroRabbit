@@ -3,9 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{3469377A-37FC-4282-A053-E8803158DF61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C51A1207-C636-4A10-A450-B60C6E4F8E26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Bus", "Infra.Bus", "{9B9849F8-E839-4429-8393-0AF9A9D51251}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.IoC", "Infra.IoC", "{CC309C41-2151-478F-A493-AF0DFEC40E2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{FDF7D1BA-91F2-467C-8D81-3BE3AE4EBA7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Domain.Core", "MicroRabbit.Domain.Core\MicroRabbit.Domain.Core.csproj", "{68714B5F-98CF-4029-B158-739E2395825C}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68714B5F-98CF-4029-B158-739E2395825C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68714B5F-98CF-4029-B158-739E2395825C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68714B5F-98CF-4029-B158-739E2395825C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68714B5F-98CF-4029-B158-739E2395825C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{68714B5F-98CF-4029-B158-739E2395825C} = {C51A1207-C636-4A10-A450-B60C6E4F8E26}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7E913EB-2D2A-428E-A236-0683951B0140}
