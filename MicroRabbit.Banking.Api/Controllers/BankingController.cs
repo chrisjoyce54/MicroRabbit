@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MicroRabbit.Banking.Application.Interfaces;
+using MicroRabbit.Banking.Application.Models;
 using MicroRabbit.Banking.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,8 +34,10 @@ namespace MicroRabbit.Banking.Api.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] AccountTransfer accountTransfer)
         {
+            accountService.Transfer(accountTransfer);
+            return Ok(accountTransfer);
         }
 
         // PUT api/values/5
