@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
-using MicroRabbit.Banking.Data.Context;
 using MicroRabbit.Infra.IoC;
 using MicroRabbit.Transfer.Data.Context;
 using Microsoft.AspNetCore.Builder;
@@ -11,14 +10,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace MicroRabbit.Banking.Api
+namespace MicroRabbit.Transfer.Api
 {
     public class Startup
     {
@@ -39,13 +37,12 @@ namespace MicroRabbit.Banking.Api
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info {Title = "Transfer Micro Service", Version = "v1"});
+                c.SwaggerDoc("v1", new Info { Title = "Banking Micro Service", Version = "v1" });
             });
             services.AddMediatR(typeof(Startup));
 
             RegisterServices(services);
         }
-
         private void RegisterServices(IServiceCollection services)
         {
             DependencyContainer.RegisterServices(services);
@@ -68,7 +65,7 @@ namespace MicroRabbit.Banking.Api
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transfer Microservice V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Banking Microservice V1");
             });
             app.UseMvc();
         }
