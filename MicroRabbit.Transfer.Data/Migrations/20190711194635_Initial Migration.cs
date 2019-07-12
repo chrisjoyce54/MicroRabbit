@@ -8,7 +8,7 @@ namespace MicroRabbit.Transfer.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Accounts",
+                name: "TransferLogs",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -26,7 +26,7 @@ namespace MicroRabbit.Transfer.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Accounts");
+                name: "TransferLogs");
         }
     }
 }

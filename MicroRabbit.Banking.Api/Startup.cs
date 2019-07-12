@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using MicroRabbit.Banking.Data.Context;
 using MicroRabbit.Infra.IoC;
-using MicroRabbit.Transfer.Data.Context;
+using MicroRabbit.Banking.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,14 +32,14 @@ namespace MicroRabbit.Banking.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TransferDbContext>(options =>
+            services.AddDbContext<BankingDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("TransferDbConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("BankingDbConnection"));
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info {Title = "Transfer Micro Service", Version = "v1"});
+                c.SwaggerDoc("v1", new Info {Title = "Banking Micro Service", Version = "v1"});
             });
             services.AddMediatR(typeof(Startup));
 
@@ -68,7 +68,7 @@ namespace MicroRabbit.Banking.Api
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transfer Microservice V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Banking Microservice V1");
             });
             app.UseMvc();
         }

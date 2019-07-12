@@ -34,7 +34,7 @@ namespace MicroRabbit.Transfer.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Accounts");
+                    b.ToTable("TransferLogs");
                 });
 #pragma warning restore 612, 618
         }
